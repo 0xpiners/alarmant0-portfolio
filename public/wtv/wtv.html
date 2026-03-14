@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8" />
+	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>wtv | Web Exploit Labs</title>
+	<meta
+		name="description"
+		content="wtv is a self-contained mini CTF with toy web exploit labs inspired by XSS, SQLi, and LFI."
+	/>
+	<link rel="icon" href="/assets/icon/favicon.ico" type="image/x-icon" />
+	<link rel="preconnect" href="https://fonts.googleapis.com" />
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+	<link
+		href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+		rel="stylesheet"
+	/>
+	<link rel="stylesheet" href="/assets/styles/site.css" />
+	<script src="/assets/scripts/wtv.js" defer></script>
+</head>
+<body class="page-wtv">
+	<a class="skip-link" href="#content">Skip to content</a>
+
+	<header class="site-shell site-header">
+		<nav class="nav" aria-label="Primary">
+			<a class="brand" href="/home">alarmant0</a>
+			<div class="nav-links">
+				<a class="nav-link nav-home" href="/home">Home</a>
+				<a class="nav-link nav-work" href="/work">Work</a>
+				<a class="nav-link nav-projects" href="/projects">Projects</a>
+				<a class="nav-link nav-wtv" href="/wtv" aria-current="page">wtv</a>
+				<a class="nav-link" href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+			</div>
+		</nav>
+	</header>
+
+	<main id="content" class="site-shell">
+		<section class="hero surface animate-in">
+			<div class="hero-copy">
+				<p class="eyebrow">wtv // exploit labs</p>
+				<h1>Three web bugs. One browser. No training wheels.</h1>
+				<p class="lead">
+					These are self-contained toy labs inspired by reflected XSS, brittle SQL string building, and path traversal. Nothing
+					here touches a real database or filesystem, but the failure modes are intentionally familiar.
+				</p>
+				<div class="button-row">
+					<a class="button button-primary" href="/home">Back to home</a>
+					<a class="button button-secondary" href="/projects">Need a break?</a>
+					<button class="button button-ghost" type="button" data-reset>Reset progress</button>
+				</div>
+			</div>
+
+			<div class="hero-visual">
+				<div class="wtv-terminal">
+					<p><strong>input</strong> -> sink</p>
+					<p><strong>query</strong> -> concatenation</p>
+					<p><strong>path</strong> -> traversal</p>
+				</div>
+				<p class="visual-note">The fun part is never the payload. It is the assumption that made the payload work.</p>
+			</div>
+		</section>
+
+		<section class="wtv-grid">
+			<div class="section surface animate-in delay-1">
+				<div class="section-heading">
+					<div>
+						<p class="section-label">Labs</p>
+						<h2>Break the wrong assumptions.</h2>
+					</div>
+					<p class="section-intro">Each lab is isolated, fake, and meant to feel like a recognizable class of web bug.</p>
+				</div>
+
+				<div class="challenge-stack">
+					<article class="challenge-card" data-stage-card data-stage="0">
+						<div class="challenge-top">
+							<div>
+								<p class="section-label">Lab 1</p>
+								<h3>Reflected XSS</h3>
+							</div>
+							<span class="stage-status" data-status>Active</span>
+						</div>
+						<p class="muted">A profile preview renders your input inside a sandboxed frame. The filter blocks the obvious paths and trusts the rest.</p>
+						<div class="challenge-actions">
+							<button class="button button-ghost" type="button" data-hint-button>Use hint</button>
+						</div>
+						<p class="challenge-hint" data-hint></p>
+						<form class="challenge-form" data-stage-form data-xss-form>
+							<div class="challenge-field">
+								<label>Profile preview input</label>
+								<input class="challenge-input" type="text" placeholder="display name" autocomplete="off" spellcheck="false" data-xss-input />
+							</div>
+							<button class="button button-primary" type="submit">Render</button>
+						</form>
+						<iframe class="lab-preview" title="XSS preview lab" sandbox="allow-scripts" data-xss-frame></iframe>
+						<pre class="lab-console" data-xss-log></pre>
+						<p class="challenge-feedback" data-feedback aria-live="polite"></p>
+					</article>
+
+					<article class="challenge-card" data-stage-card data-stage="1">
+						<div class="challenge-top">
+							<div>
+								<p class="section-label">Lab 2</p>
+								<h3>SQLi</h3>
+							</div>
+							<span class="stage-status" data-status>Locked</span>
+						</div>
+						<p class="muted">A legacy user lookup still builds SQL with string concatenation, then runs a raw keyword filter before normalizing the input.</p>
+						<div class="challenge-actions">
+							<button class="button button-ghost" type="button" data-hint-button>Use hint</button>
+						</div>
+						<p class="challenge-hint" data-hint></p>
+						<form class="challenge-form" data-stage-form data-sqli-form>
+							<div class="challenge-field">
+								<label>Username probe</label>
+								<input class="challenge-input" type="text" placeholder="visitor" autocomplete="off" spellcheck="false" data-sqli-input />
+							</div>
+							<button class="button button-primary" type="submit">Run query</button>
+						</form>
+						<pre class="lab-console" data-sqli-log></pre>
+						<p class="challenge-feedback" data-feedback aria-live="polite"></p>
+					</article>
+
+					<article class="challenge-card" data-stage-card data-stage="2">
+						<div class="challenge-top">
+							<div>
+								<p class="section-label">Lab 3</p>
+								<h3>LFI</h3>
+							</div>
+							<span class="stage-status" data-status>Locked</span>
+						</div>
+						<p class="muted">A file viewer strips traversal once, decodes again, then normalizes under a deeper root. Those steps do not agree.</p>
+						<div class="challenge-actions">
+							<button class="button button-ghost" type="button" data-hint-button>Use hint</button>
+						</div>
+						<p class="challenge-hint" data-hint></p>
+						<form class="challenge-form" data-stage-form data-lfi-form>
+							<div class="challenge-field">
+								<label>Requested path</label>
+								<input class="challenge-input" type="text" placeholder="docs/readme.txt" autocomplete="off" spellcheck="false" data-lfi-input />
+							</div>
+							<button class="button button-primary" type="submit">Read file</button>
+						</form>
+						<pre class="lab-console" data-lfi-log></pre>
+						<p class="challenge-feedback" data-feedback aria-live="polite"></p>
+					</article>
+				</div>
+			</div>
+
+			<aside class="section surface challenge-sidebar animate-in delay-2">
+				<p class="section-label">Rules</p>
+				<h2>Contained, but not hand-held.</h2>
+				<ul class="challenge-rules">
+					<li>These are toy labs. The bugs are real categories, but the targets are isolated to this tab.</li>
+					<li>Use normal browser tools. The point is understanding the assumption that failed.</li>
+					<li>Payloads matter less than noticing where trust crossed a boundary.</li>
+				</ul>
+
+				<div class="progress-strip">
+					<span class="progress-token" data-progress-token>xss</span>
+					<span class="progress-token" data-progress-token>sqli</span>
+					<span class="progress-token" data-progress-token>lfi</span>
+				</div>
+
+				<ul class="challenge-log" data-challenge-log></ul>
+			</aside>
+		</section>
+
+		<section class="section surface challenge-finish animate-in delay-3" data-finish>
+			<p class="section-label">Cleared</p>
+			<h2>You stopped trusting the wrong layer.</h2>
+			<p class="section-intro">All three labs are open. The reward flag is just the summary.</p>
+			<p class="challenge-reward" data-reward-flag></p>
+		</section>
+	</main>
+
+	<footer class="site-shell site-footer">
+		<div class="footer-inner">
+			<div class="footer-links">
+				<a href="/home#about">About</a>
+				<a href="/work">Work</a>
+				<a href="/projects">Projects</a>
+				<a href="/wtv">wtv</a>
+				<a href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+				<a href="mailto:davidpinheirombp57@gmail.com">Email</a>
+			</div>
+			<p>© 2026 David Pinheiro. Still fake. Still meaner.</p>
+		</div>
+	</footer>
+</body>
+</html>
