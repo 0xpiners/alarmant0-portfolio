@@ -12,7 +12,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link
-		href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
 		rel="stylesheet"
 	/>
 	<link rel="stylesheet" href="/assets/styles/site.css" />
@@ -21,184 +21,211 @@
 	<a class="skip-link" href="#content">Skip to content</a>
 
 	<header class="site-shell site-header">
-		<nav class="nav" aria-label="Primary">
-			<a class="brand" href="/home">alarmant0</a>
+		<nav class="topbar" aria-label="Primary">
+			<a class="brand" href="/home">
+				<span class="brand-name">alarmant0</span>
+				<span class="brand-note">security / systems</span>
+			</a>
 			<div class="nav-links">
-				<a class="nav-link nav-home" href="/home" aria-current="page">Home</a>
-				<a class="nav-link nav-work" href="/work">Work</a>
-				<a class="nav-link nav-projects" href="/projects">Projects</a>
-				<a class="nav-link nav-wtv" href="/wtv">wtv</a>
-				<a class="nav-link" href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+				<a class="nav-link" href="/home" aria-current="page">Home</a>
+				<a class="nav-link" href="/work">Work</a>
+				<a class="nav-link" href="/projects">Projects</a>
+				<a class="nav-link" href="/wtv">wtv</a>
+				<a class="nav-link" href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
 			</div>
 		</nav>
 	</header>
 
-	<main id="content" class="site-shell">
-		<section class="hero surface animate-in">
+	<main id="content" class="site-shell site-main">
+		<section class="hero animate-in">
 			<div class="hero-copy">
-				<p class="eyebrow">Red team engineering · security research · systems thinking</p>
-				<h1>David Pinheiro builds and tests systems from the inside out.</h1>
-				<p class="lead">
-					I am a Computer Science student at Instituto Superior Tecnico and a Red Team Engineer intern at Cloudflare. I like
-					work that forces precision: offensive testing, resilient engineering, and understanding how real products behave when
-					they are pushed hard.
+				<p class="eyebrow">security / systems / tooling</p>
+				<h1>Hi, I'm David.</h1>
+				<p class="lead story">
+					I'm David. I study CS at IST and work with the red team at Cloudflare. Most of my time goes into
+					<span class="story-chip">product security</span>,
+					<span class="story-chip">backend systems</span>,
+					and
+					<span class="story-chip">tools that fix annoying problems</span>.
 				</p>
 				<div class="button-row">
-					<a class="button button-primary" href="/work">See experience</a>
-					<a class="button button-secondary" href="/projects">Browse projects</a>
-					<a class="button button-ghost" href="mailto:davidpinheirombp57@gmail.com">Contact me</a>
+					<a class="button button-primary" href="/work">View work</a>
+					<a class="button button-secondary" href="/projects">Open projects</a>
+					<a class="button button-ghost" href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
 				</div>
-				<ul class="mini-stats">
-					<li><strong>Current role</strong>Red Team Engineer intern at Cloudflare</li>
-					<li><strong>Academic base</strong>Computer Science at Instituto Superior Tecnico</li>
-					<li><strong>Focus</strong>Security validation, tooling, and sharp execution</li>
-				</ul>
 			</div>
 
-			<div class="hero-visual">
-				<div class="photo-frame">
-					<img src="/assets/photos/Photos.png" alt="Photo collage of David Pinheiro" />
+			<div class="page-side">
+				<div class="status-block">
+					<p class="mini-label">A few facts</p>
+					<ul class="status-list">
+						<li>
+							<span>Now</span>
+							<strong>Red team intern at Cloudflare</strong>
+						</li>
+						<li>
+							<span>Study</span>
+							<strong>Computer Science at IST</strong>
+						</li>
+						<li>
+							<span>Based</span>
+							<strong>Lisbon</strong>
+						</li>
+					</ul>
 				</div>
-				<p class="visual-note">Security-minded by default. Curious enough to keep digging.</p>
+
+				<figure class="hero-photo">
+					<div class="hero-photo-frame">
+						<img src="/assets/photos/Photos.png" alt="Photo collage of David Pinheiro" />
+					</div>
+					<figcaption>Photos from trips. The day job is mostly terminals and diagrams.</figcaption>
+				</figure>
 			</div>
 		</section>
 
-		<section id="about" class="section-grid">
-			<div class="section-card surface animate-in delay-1">
-				<p class="section-label">What I focus on</p>
-				<h2>Real products, real pressure, useful outcomes.</h2>
-				<ul class="feature-list">
-					<li>Security testing that stays close to how products are actually built and shipped.</li>
-					<li>Hands-on learning through implementation, review, and controlled failure.</li>
-					<li>Clear communication that turns technical findings into decisions people can act on.</li>
-				</ul>
+		<section id="about" class="band animate-in delay-1">
+			<div class="band-head">
+				<p class="eyebrow">Focus</p>
+				<h2>What I keep coming back to</h2>
 			</div>
-
-			<div class="section-card surface animate-in delay-2">
-				<p class="section-label">Right now</p>
-				<h2>Learning in public through work that matters.</h2>
-				<p class="section-intro">
-					At Cloudflare I help test products with an adversarial mindset. Outside of that, I keep building projects that force
-					me to think about networking, automation, and the tradeoffs behind reliable systems.
-				</p>
-				<ul class="stack-list">
-					<li>Offensive testing and product security</li>
-					<li>Distributed systems and networking concepts</li>
-					<li>Implementation details that survive contact with reality</li>
-				</ul>
-			</div>
-		</section>
-
-		<section class="section surface animate-in delay-2">
-			<div class="section-heading">
-				<div>
-					<p class="section-label">Experience snapshot</p>
-					<h2>Security work, teaching, and product-building.</h2>
+			<div class="band-body">
+				<p class="band-intro">I like work that starts with understanding the system properly and ends with something cleaner, safer, or easier to use.</p>
+				<div class="focus-grid">
+					<article class="focus-item">
+						<p class="mini-label">01</p>
+						<h3>Security</h3>
+						<p>Product security, bug hunting, and web surfaces that look simple until they are not.</p>
+					</article>
+					<article class="focus-item">
+						<p class="mini-label">02</p>
+						<h3>Systems</h3>
+						<p>Networking, services, and the backend-heavy parts that are usually more interesting anyway.</p>
+					</article>
+					<article class="focus-item">
+						<p class="mini-label">03</p>
+						<h3>Tooling</h3>
+						<p>Small tools, scripts, and bits of automation that make repetitive work disappear.</p>
+					</article>
 				</div>
-				<p class="section-intro">A few roles that shaped how I think about systems, collaboration, and technical depth.</p>
-			</div>
-
-			<div class="timeline">
-				<article class="timeline-item">
-					<div class="timeline-meta">2025 - Present</div>
-					<div class="timeline-copy">
-						<h3>Red Team Engineer Intern · Cloudflare</h3>
-						<p>Testing Cloudflare products with a security-first lens and focusing on how real systems fail under pressure.</p>
-					</div>
-				</article>
-				<article class="timeline-item">
-					<div class="timeline-meta">2024 - 2025</div>
-					<div class="timeline-copy">
-						<h3>Software Developer Intern</h3>
-						<p>Built internal tools and web applications while working with teammates across product and engineering contexts.</p>
-					</div>
-				</article>
-				<article class="timeline-item">
-					<div class="timeline-meta">2023 - 2024</div>
-					<div class="timeline-copy">
-						<h3>Teaching Assistant · Instituto Superior Tecnico</h3>
-						<p>Supported computer science students in labs and practical exercises, with an emphasis on clarity and fundamentals.</p>
-					</div>
-				</article>
 			</div>
 		</section>
 
-		<section class="section surface animate-in delay-3">
-			<div class="section-heading">
-				<div>
-					<p class="section-label">Selected projects</p>
-					<h2>Projects that made ideas concrete.</h2>
+		<section class="band animate-in delay-2">
+			<div class="band-head">
+				<p class="eyebrow">Timeline</p>
+				<h2>Recent roles</h2>
+			</div>
+			<div class="band-body">
+				<div class="timeline-list">
+					<article class="timeline-entry">
+						<p class="timeline-year">2025 - Now</p>
+						<div class="timeline-body">
+							<h3>Red Team Engineer Intern · Cloudflare</h3>
+							<p>Product security work, testing, and a lot of reading before touching anything.</p>
+						</div>
+						<p class="timeline-note">Product security</p>
+					</article>
+					<article class="timeline-entry">
+						<p class="timeline-year">2024 - 2025</p>
+						<div class="timeline-body">
+							<h3>Software Developer Intern</h3>
+							<p>Internal tools and web apps. Mostly the good kind of boring.</p>
+						</div>
+						<p class="timeline-note">Internal tooling</p>
+					</article>
+					<article class="timeline-entry">
+						<p class="timeline-year">2023 - 2024</p>
+						<div class="timeline-body">
+							<h3>Teaching Assistant · Instituto Superior Tecnico</h3>
+							<p>Labs, practical classes, and helping people get unstuck without wasting their time.</p>
+						</div>
+						<p class="timeline-note">Teaching</p>
+					</article>
 				</div>
-				<p class="section-intro">A small set of repositories that reflect how I like to learn: by building things end to end.</p>
-			</div>
-
-			<div class="project-grid">
-				<article class="project-card">
-					<div class="chip-row">
-						<span class="chip">Automation</span>
-						<span class="chip">Education</span>
-					</div>
-					<h3>AutoAttendance</h3>
-					<p>An attendance automation workflow aimed at reducing manual overhead in an academic environment.</p>
-					<a class="card-link" href="https://github.com/alarmant0/AutoAttendanceLeonardDeVinciUniversity" target="_blank" rel="noreferrer">Open repository</a>
-				</article>
-
-				<article class="project-card">
-					<div class="chip-row">
-						<span class="chip">Networking</span>
-						<span class="chip">Security</span>
-					</div>
-					<h3>Simple Onion Router Network</h3>
-					<p>A compact onion-routing implementation exploring relay design, layered encryption, and packet flow.</p>
-					<a class="card-link" href="https://github.com/alarmant0/Simple-onion-router-network" target="_blank" rel="noreferrer">Open repository</a>
-				</article>
-
-				<article class="project-card">
-					<div class="chip-row">
-						<span class="chip">AI</span>
-						<span class="chip">Games</span>
-					</div>
-					<h3>Space Invaders AI</h3>
-					<p>An autonomous game-playing project that applies decision-making logic to a classic arcade environment.</p>
-					<a class="card-link" href="https://github.com/alarmant0/Space-Invaders-AI" target="_blank" rel="noreferrer">Open repository</a>
-				</article>
-
-				<article class="project-card">
-					<div class="chip-row">
-						<span class="chip">Java</span>
-						<span class="chip">Systems</span>
-					</div>
-					<h3>Event Queue Application</h3>
-					<p>A Java project centered on event-driven flow, queue behavior, and the mechanics behind scheduled processing.</p>
-					<a class="card-link" href="https://github.com/alarmant0/Event-queue-application" target="_blank" rel="noreferrer">Open repository</a>
-				</article>
 			</div>
 		</section>
 
-		<section class="cta-panel surface animate-in delay-4">
-			<div>
-				<p class="section-label">Next step</p>
-				<h2>Want the short version?</h2>
-				<p>Use the work page for experience, the projects page for build details, or go straight to the resume if you need the compressed view.</p>
+		<section class="band animate-in delay-3">
+			<div class="band-head">
+				<p class="eyebrow">Selected</p>
+				<h2>A few things I've built</h2>
+			</div>
+			<div class="band-body">
+				<div class="project-list">
+					<article class="project-row">
+						<p class="project-index">01</p>
+						<div class="project-body">
+							<h3>AutoAttendance</h3>
+							<p>Attendance automation for getting repetitive admin work out of the way.</p>
+						</div>
+						<div class="project-side">
+							<div class="tag-row">
+								<span class="tag">Automation</span>
+								<span class="tag">Workflow</span>
+							</div>
+							<p>Small tool, useful result.</p>
+						</div>
+						<a class="inline-link" href="https://github.com/alarmant0/AutoAttendanceLeonardDeVinciUniversity" target="_blank" rel="noopener noreferrer">Repo</a>
+					</article>
+					<article class="project-row">
+						<p class="project-index">02</p>
+						<div class="project-body">
+							<h3>Simple Onion Router Network</h3>
+							<p>A small onion-routing network built around protocol flow and routing.</p>
+						</div>
+						<div class="project-side">
+							<div class="tag-row">
+								<span class="tag">Networking</span>
+								<span class="tag">Security</span>
+							</div>
+							<p>Network and protocol work.</p>
+						</div>
+						<a class="inline-link" href="https://github.com/alarmant0/Simple-onion-router-network" target="_blank" rel="noopener noreferrer">Repo</a>
+					</article>
+					<article class="project-row">
+						<p class="project-index">03</p>
+						<div class="project-body">
+							<h3>Space Invaders AI</h3>
+							<p>An AI player built around game-state decisions instead of visual tricks or hacks.</p>
+						</div>
+						<div class="project-side">
+							<div class="tag-row">
+								<span class="tag">AI</span>
+								<span class="tag">Games</span>
+							</div>
+							<p>Logic over presentation.</p>
+						</div>
+						<a class="inline-link" href="https://github.com/alarmant0/Space-Invaders-AI" target="_blank" rel="noopener noreferrer">Repo</a>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="closing-strip animate-in delay-4">
+			<div class="closing-copy">
+				<p class="eyebrow">Next</p>
+				<h2>Start with work or projects.</h2>
+				<p class="closing-note">If you want the cleaner summary, the resume is there too.</p>
 			</div>
 			<div class="button-row">
-				<a class="button button-primary" href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noreferrer">Download resume</a>
-				<a class="button button-secondary" href="https://github.com/alarmant0" target="_blank" rel="noreferrer">Visit GitHub</a>
+				<a class="button button-primary" href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noopener noreferrer">Open resume</a>
+				<a class="button button-secondary" href="https://github.com/alarmant0" target="_blank" rel="noopener noreferrer">Visit GitHub</a>
+				<a class="button button-ghost" href="mailto:davidpinheirombp57@gmail.com">Email</a>
 			</div>
 		</section>
 	</main>
 
 	<footer class="site-shell site-footer">
-		<div class="footer-inner">
+		<div class="footer-bar">
+			<p>David Pinheiro</p>
 			<div class="footer-links">
 				<a href="/home#about">About</a>
 				<a href="/work">Work</a>
 				<a href="/projects">Projects</a>
 				<a href="/wtv">wtv</a>
-				<a href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+				<a href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
 				<a href="mailto:davidpinheirombp57@gmail.com">Email</a>
 			</div>
-			<p>© 2026 David Pinheiro. Built on Cloudflare Workers with static assets.</p>
 		</div>
 	</footer>
 </body>

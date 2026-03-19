@@ -12,7 +12,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link
-		href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
 		rel="stylesheet"
 	/>
 	<link rel="stylesheet" href="/assets/styles/site.css" />
@@ -22,64 +22,113 @@
 	<a class="skip-link" href="#content">Skip to content</a>
 
 	<header class="site-shell site-header">
-		<nav class="nav" aria-label="Primary">
-			<a class="brand" href="/home">alarmant0</a>
+		<nav class="topbar" aria-label="Primary">
+			<a class="brand" href="/home">
+				<span class="brand-name">alarmant0</span>
+				<span class="brand-note">security / systems</span>
+			</a>
 			<div class="nav-links">
-				<a class="nav-link nav-home" href="/home">Home</a>
-				<a class="nav-link nav-work" href="/work">Work</a>
-				<a class="nav-link nav-projects" href="/projects">Projects</a>
-				<a class="nav-link nav-wtv" href="/wtv" aria-current="page">wtv</a>
-				<a class="nav-link" href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+				<a class="nav-link" href="/home">Home</a>
+				<a class="nav-link" href="/work">Work</a>
+				<a class="nav-link" href="/projects">Projects</a>
+				<a class="nav-link" href="/wtv" aria-current="page">wtv</a>
+				<a class="nav-link" href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
 			</div>
 		</nav>
 	</header>
 
-	<main id="content" class="site-shell">
-		<section class="hero surface animate-in">
-			<div class="hero-copy">
+	<main id="content" class="site-shell site-main">
+		<section class="page-header animate-in">
+			<div class="page-hero-copy">
 				<p class="eyebrow">wtv // exploit labs</p>
-				<h1>Three web bugs. One browser. No training wheels.</h1>
-				<p class="lead">
-					These are self-contained toy labs inspired by reflected XSS, brittle SQL string building, and path traversal. Nothing
-					here touches a real database or filesystem, but the failure modes are intentionally familiar.
+				<h1>Mini web CTF.</h1>
+				<p class="lead story">
+					Small web CTF.
+					<span class="story-chip">xss</span>
+					<span class="story-chip">sqli</span>
+					<span class="story-chip">lfi</span>
+					Same rule every time: pay attention to what the app gives you back.
 				</p>
 				<div class="button-row">
-					<a class="button button-primary" href="/home">Back to home</a>
-					<a class="button button-secondary" href="/projects">Need a break?</a>
+					<a class="button button-primary" href="/home">Back home</a>
+					<a class="button button-secondary" href="/projects">See projects</a>
 					<button class="button button-ghost" type="button" data-reset>Reset progress</button>
 				</div>
 			</div>
 
-			<div class="hero-visual">
-				<div class="wtv-terminal">
-					<p><strong>input</strong> -> sink</p>
-					<p><strong>query</strong> -> concatenation</p>
-					<p><strong>path</strong> -> traversal</p>
+			<aside class="panel">
+				<p class="mini-label">Lab map</p>
+				<div class="terminal-lines">
+					<p><strong>xss</strong> -> metadata -> fragment -> frame</p>
+					<p><strong>sqli</strong> -> raw filter -> normalized parser</p>
+					<p><strong>lfi</strong> -> ticket -> decode -> mount</p>
 				</div>
-				<p class="visual-note">The fun part is never the payload. It is the assumption that made the payload work.</p>
-			</div>
+				<p class="terminal-note">The response is usually the clue.</p>
+			</aside>
 		</section>
 
-		<section class="wtv-grid">
-			<div class="section surface animate-in delay-1">
+		<section class="signal-ribbon animate-in delay-1" aria-label="Challenge surfaces">
+			<article class="signal-card">
+				<p class="mini-label">Surface 01</p>
+				<h3>Rehydration</h3>
+				<p>Text becomes HTML again.</p>
+			</article>
+			<article class="signal-card">
+				<p class="mini-label">Surface 02</p>
+				<h3>Union drift</h3>
+				<p>Raw filters miss parsed SQL.</p>
+			</article>
+			<article class="signal-card">
+				<p class="mini-label">Surface 03</p>
+				<h3>Mount escape</h3>
+				<p>Path checks disagree.</p>
+			</article>
+		</section>
+
+		<section class="dashboard-strip animate-in delay-2" aria-label="Run overview">
+			<article class="panel dashboard-card dashboard-card-primary">
+				<p class="mini-label">Current stage</p>
+				<h3 data-active-label>xss</h3>
+				<p class="dashboard-copy">The next clue usually appears in the response before it appears in the UI.</p>
+			</article>
+			<article class="panel dashboard-card">
+				<p class="mini-label">Labs cleared</p>
+				<h3><span data-cleared-count>0</span>/3</h3>
+				<p class="dashboard-copy">Each solved surface unlocks the next one and updates the final gate.</p>
+			</article>
+			<article class="panel dashboard-card">
+				<p class="mini-label">Hints spent</p>
+				<h3 data-hint-count>0</h3>
+				<p class="dashboard-copy">Hints reveal sequencing, not payloads. Use them when a boundary looks intentional.</p>
+			</article>
+		</section>
+
+		<section class="lab-layout animate-in delay-3">
+			<section class="labs-panel">
 				<div class="section-heading">
 					<div>
-						<p class="section-label">Labs</p>
-						<h2>Break the wrong assumptions.</h2>
+						<p class="eyebrow">Labs</p>
+						<h2>Find the break</h2>
 					</div>
-					<p class="section-intro">Each lab is isolated, fake, and meant to feel like a recognizable class of web bug.</p>
+					<p class="section-note">Use devtools. Read the responses.</p>
 				</div>
 
 				<div class="challenge-stack">
 					<article class="challenge-card" data-stage-card data-stage="0">
 						<div class="challenge-top">
 							<div>
-								<p class="section-label">Lab 1</p>
+								<p class="mini-label">Lab 1</p>
 								<h3>Reflected XSS</h3>
+								<p class="challenge-kicker">metadata -> html</p>
 							</div>
 							<span class="stage-status" data-status>Active</span>
 						</div>
-						<p class="muted">A profile preview renders your input inside a sandboxed frame. The filter blocks the obvious paths and trusts the rest.</p>
+						<div class="challenge-meta">
+							<span class="challenge-tag">client sink</span>
+							<span class="challenge-tag">frame state</span>
+							<span class="challenge-tag">warmup</span>
+						</div>
+						<p class="muted">This preview stores your input, then rebuilds it inside a frame.</p>
 						<div class="challenge-actions">
 							<button class="button button-ghost" type="button" data-hint-button>Use hint</button>
 						</div>
@@ -99,12 +148,18 @@
 					<article class="challenge-card" data-stage-card data-stage="1">
 						<div class="challenge-top">
 							<div>
-								<p class="section-label">Lab 2</p>
+								<p class="mini-label">Lab 2</p>
 								<h3>SQLi</h3>
+								<p class="challenge-kicker">raw bytes -> parsed query</p>
 							</div>
 							<span class="stage-status" data-status>Locked</span>
 						</div>
-						<p class="muted">A legacy user lookup still builds SQL with string concatenation, then runs a raw keyword filter before normalizing the input.</p>
+						<div class="challenge-meta">
+							<span class="challenge-tag">normalized sql</span>
+							<span class="challenge-tag">union branch</span>
+							<span class="challenge-tag">mid-chain</span>
+						</div>
+						<p class="muted">The query builder still trusts concatenation more than it should.</p>
 						<div class="challenge-actions">
 							<button class="button button-ghost" type="button" data-hint-button>Use hint</button>
 						</div>
@@ -123,12 +178,18 @@
 					<article class="challenge-card" data-stage-card data-stage="2">
 						<div class="challenge-top">
 							<div>
-								<p class="section-label">Lab 3</p>
+								<p class="mini-label">Lab 3</p>
 								<h3>LFI</h3>
+								<p class="challenge-kicker">ticket -> decode -> mount</p>
 							</div>
 							<span class="stage-status" data-status>Locked</span>
 						</div>
-						<p class="muted">A file viewer strips traversal once, decodes again, then normalizes under a deeper root. Those steps do not agree.</p>
+						<div class="challenge-meta">
+							<span class="challenge-tag">double decode</span>
+							<span class="challenge-tag">mount escape</span>
+							<span class="challenge-tag">endgame</span>
+						</div>
+						<p class="muted">The file viewer checks one path and ends up resolving another.</p>
 						<div class="challenge-actions">
 							<button class="button button-ghost" type="button" data-hint-button>Use hint</button>
 						</div>
@@ -136,7 +197,7 @@
 						<form class="challenge-form" data-stage-form data-lfi-form>
 							<div class="challenge-field">
 								<label>Requested path</label>
-								<input class="challenge-input" type="text" placeholder="docs/readme.txt" autocomplete="off" spellcheck="false" data-lfi-input />
+								<input class="challenge-input" type="text" placeholder="docs/welcome.txt" autocomplete="off" spellcheck="false" data-lfi-input />
 							</div>
 							<button class="button button-primary" type="submit">Read file</button>
 						</form>
@@ -144,46 +205,116 @@
 						<p class="challenge-feedback" data-feedback aria-live="polite"></p>
 					</article>
 				</div>
-			</div>
+			</section>
 
-			<aside class="section surface challenge-sidebar animate-in delay-2">
-				<p class="section-label">Rules</p>
-				<h2>Contained, but not hand-held.</h2>
+			<aside class="panel challenge-sidebar animate-in delay-4">
+				<p class="eyebrow">Run state</p>
+				<h2>Still contained</h2>
+				<div class="run-meter-block">
+					<div class="run-meter-head">
+						<span class="mini-label">Containment</span>
+						<span class="run-meter-value" data-meter-label>0%</span>
+					</div>
+					<div class="run-meter-track" aria-hidden="true">
+						<span class="run-meter-fill" data-meter-fill></span>
+					</div>
+				</div>
 				<ul class="challenge-rules">
-					<li>These are toy labs. The bugs are real categories, but the targets are isolated to this tab.</li>
-					<li>Use normal browser tools. The point is understanding the assumption that failed.</li>
-					<li>Payloads matter less than noticing where trust crossed a boundary.</li>
+					<li>Toy bugs, real patterns.</li>
+					<li>Use the browser properly.</li>
+					<li>Everything stays in this tab.</li>
 				</ul>
+
+				<div class="sidebar-stage-grid" aria-label="Stage tracker">
+					<div class="sidebar-stage" data-sidebar-stage>
+						<span class="sidebar-stage-index">01</span>
+						<div>
+							<strong>xss</strong>
+							<p data-sidebar-stage-copy>Active</p>
+						</div>
+					</div>
+					<div class="sidebar-stage" data-sidebar-stage>
+						<span class="sidebar-stage-index">02</span>
+						<div>
+							<strong>sqli</strong>
+							<p data-sidebar-stage-copy>Locked</p>
+						</div>
+					</div>
+					<div class="sidebar-stage" data-sidebar-stage>
+						<span class="sidebar-stage-index">03</span>
+						<div>
+							<strong>lfi</strong>
+							<p data-sidebar-stage-copy>Locked</p>
+						</div>
+					</div>
+					<div class="sidebar-stage" data-sidebar-stage>
+						<span class="sidebar-stage-index">04</span>
+						<div>
+							<strong>final</strong>
+							<p data-sidebar-stage-copy>Locked</p>
+						</div>
+					</div>
+				</div>
 
 				<div class="progress-strip">
 					<span class="progress-token" data-progress-token>xss</span>
 					<span class="progress-token" data-progress-token>sqli</span>
 					<span class="progress-token" data-progress-token>lfi</span>
+					<span class="progress-token" data-progress-token>final</span>
 				</div>
 
 				<ul class="challenge-log" data-challenge-log></ul>
 			</aside>
 		</section>
 
-		<section class="section surface challenge-finish animate-in delay-3" data-finish>
-			<p class="section-label">Cleared</p>
-			<h2>You stopped trusting the wrong layer.</h2>
-			<p class="section-intro">All three labs are open. The reward flag is just the summary.</p>
-			<p class="challenge-reward" data-reward-flag></p>
+		<section class="panel challenge-finish animate-in delay-4" data-finish>
+			<div>
+				<p class="eyebrow">Final</p>
+				<h2>Seal the run</h2>
+				<p class="section-note">Bring back the three stage flags.</p>
+				<div class="finish-note">
+					<p class="mini-label">Checklist</p>
+					<p>Confirm each stage flag in the consoles first, then submit the full set once.</p>
+				</div>
+			</div>
+			<div>
+				<form class="final-form" data-final-form>
+					<div class="final-grid">
+						<div class="challenge-field">
+							<label>XSS flag</label>
+							<input class="challenge-input" type="text" autocomplete="off" spellcheck="false" placeholder="wtv{...}" data-final-xss />
+						</div>
+						<div class="challenge-field">
+							<label>SQLi flag</label>
+							<input class="challenge-input" type="text" autocomplete="off" spellcheck="false" placeholder="wtv{...}" data-final-sqli />
+						</div>
+						<div class="challenge-field">
+							<label>LFI flag</label>
+							<input class="challenge-input" type="text" autocomplete="off" spellcheck="false" placeholder="wtv{...}" data-final-lfi />
+						</div>
+					</div>
+					<div class="button-row">
+						<button class="button button-primary" type="submit">Submit flags</button>
+					</div>
+				</form>
+				<pre class="lab-console final-console" data-final-log></pre>
+				<p class="challenge-feedback" data-final-feedback aria-live="polite"></p>
+				<p class="challenge-reward" data-reward-flag></p>
+			</div>
 		</section>
 	</main>
 
 	<footer class="site-shell site-footer">
-		<div class="footer-inner">
+		<div class="footer-bar">
+			<p>David Pinheiro</p>
 			<div class="footer-links">
 				<a href="/home#about">About</a>
 				<a href="/work">Work</a>
 				<a href="/projects">Projects</a>
 				<a href="/wtv">wtv</a>
-				<a href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+				<a href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
 				<a href="mailto:davidpinheirombp57@gmail.com">Email</a>
 			</div>
-			<p>© 2026 David Pinheiro. Still fake. Still meaner.</p>
 		</div>
 	</footer>
 </body>

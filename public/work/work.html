@@ -12,7 +12,7 @@
 	<link rel="preconnect" href="https://fonts.googleapis.com" />
 	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 	<link
-		href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,600;9..144,700&family=Space+Grotesk:wght@400;500;700&display=swap"
+		href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@400;500;600&family=Instrument+Sans:wght@400;500;600;700&family=Space+Grotesk:wght@400;500;700&display=swap"
 		rel="stylesheet"
 	/>
 	<link rel="stylesheet" href="/assets/styles/site.css" />
@@ -21,144 +21,173 @@
 	<a class="skip-link" href="#content">Skip to content</a>
 
 	<header class="site-shell site-header">
-		<nav class="nav" aria-label="Primary">
-			<a class="brand" href="/home">alarmant0</a>
+		<nav class="topbar" aria-label="Primary">
+			<a class="brand" href="/home">
+				<span class="brand-name">alarmant0</span>
+				<span class="brand-note">security / systems</span>
+			</a>
 			<div class="nav-links">
-				<a class="nav-link nav-home" href="/home">Home</a>
-				<a class="nav-link nav-work" href="/work" aria-current="page">Work</a>
-				<a class="nav-link nav-projects" href="/projects">Projects</a>
-				<a class="nav-link nav-wtv" href="/wtv">wtv</a>
-				<a class="nav-link" href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+				<a class="nav-link" href="/home">Home</a>
+				<a class="nav-link" href="/work" aria-current="page">Work</a>
+				<a class="nav-link" href="/projects">Projects</a>
+				<a class="nav-link" href="/wtv">wtv</a>
+				<a class="nav-link" href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
 			</div>
 		</nav>
 	</header>
 
-	<main id="content" class="site-shell">
-		<section class="hero surface animate-in">
-			<div class="hero-copy">
+	<main id="content" class="site-shell site-main">
+		<section class="page-header animate-in">
+			<div class="page-hero-copy">
 				<p class="eyebrow">Work</p>
-				<h1>Experience shaped by security, systems, and teaching.</h1>
-				<p class="lead">
-					My work so far sits at the intersection of technical depth and clear execution. I like roles where understanding the
-					system is as important as finding the weakness, and where a good report matters as much as a good exploit.
+				<h1>What I've done.</h1>
+				<p class="lead story">
+					I usually end up around
+					<span class="story-chip">security review</span>,
+					<span class="story-chip">backend work</span>,
+					and
+					<span class="story-chip">infra-shaped problems</span>.
+					This is the short version.
 				</p>
 				<div class="button-row">
-					<a class="button button-primary" href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noreferrer">Open resume</a>
+					<a class="button button-primary" href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noopener noreferrer">Open resume</a>
 					<a class="button button-secondary" href="/projects">See projects</a>
-					<a class="button button-ghost" href="mailto:davidpinheirombp57@gmail.com">Start a conversation</a>
+					<a class="button button-ghost" href="mailto:davidpinheirombp57@gmail.com">Email</a>
 				</div>
 			</div>
 
-			<div class="hero-visual">
-				<div class="photo-frame">
-					<img src="/assets/photos/Photos.png" alt="Photo collage of David Pinheiro" />
+			<div class="page-side">
+				<div class="status-block">
+					<p class="mini-label">Right now</p>
+					<ul class="status-list">
+						<li>
+							<span>Now</span>
+							<strong>Red Team intern at Cloudflare</strong>
+						</li>
+						<li>
+							<span>Study</span>
+							<strong>Computer Science at IST</strong>
+						</li>
+						<li>
+							<span>Bias</span>
+							<strong>Useful work over presentation work</strong>
+						</li>
+					</ul>
 				</div>
-				<p class="visual-note">I prefer hard problems, concrete results, and honest feedback loops.</p>
 			</div>
 		</section>
 
-		<section class="section surface animate-in delay-1">
-			<div class="section-heading">
-				<div>
-					<p class="section-label">Timeline</p>
-					<h2>Roles that sharpened how I work.</h2>
+		<section class="band animate-in delay-1">
+			<div class="band-head">
+				<p class="eyebrow">Timeline</p>
+				<h2>Recent roles</h2>
+			</div>
+			<div class="band-body">
+				<div class="timeline-list">
+					<article class="timeline-entry">
+						<p class="timeline-year">2025 - Now</p>
+						<div class="timeline-body">
+							<h3>Red Team Engineer Intern · Cloudflare</h3>
+							<p>Product security work, testing, and time spent understanding how systems actually behave under pressure.</p>
+						</div>
+						<p class="timeline-note">Security</p>
+					</article>
+					<article class="timeline-entry">
+						<p class="timeline-year">2024 - 2025</p>
+						<div class="timeline-body">
+							<h3>Software Developer Intern</h3>
+							<p>Internal tooling and web apps, built with a strong bias for utility over polish.</p>
+						</div>
+						<p class="timeline-note">Tooling</p>
+					</article>
+					<article class="timeline-entry">
+						<p class="timeline-year">2023 - 2024</p>
+						<div class="timeline-body">
+							<h3>Teaching Assistant · Instituto Superior Tecnico</h3>
+							<p>Labs, practical classes, and helping students move through technical material without the fluff.</p>
+						</div>
+						<p class="timeline-note">Teaching</p>
+					</article>
 				</div>
-				<p class="section-intro">Security, software, and teaching all forced different habits. The useful ones stayed.</p>
-			</div>
-
-			<div class="timeline">
-				<article class="timeline-item">
-					<div class="timeline-meta">2025 - Present</div>
-					<div class="timeline-copy">
-						<h3>Red Team Engineer Intern · Cloudflare</h3>
-						<p>
-							Working with a red-team mindset to test Cloudflare products, explore assumptions, and surface the kinds of
-							problems that matter before customers do.
-						</p>
-					</div>
-				</article>
-				<article class="timeline-item">
-					<div class="timeline-meta">2024 - 2025</div>
-					<div class="timeline-copy">
-						<h3>Software Developer Intern</h3>
-						<p>
-							Built internal tools and web applications, collaborated with other teams, and learned how fast simple product
-							choices become engineering constraints.
-						</p>
-					</div>
-				</article>
-				<article class="timeline-item">
-					<div class="timeline-meta">2023 - 2024</div>
-					<div class="timeline-copy">
-						<h3>Teaching Assistant · Instituto Superior Tecnico</h3>
-						<p>
-							Helped students work through computer science labs and concepts, which made me much stricter about clear
-							explanations and fundamentals.
-						</p>
-					</div>
-				</article>
 			</div>
 		</section>
 
-		<section class="split-grid">
-			<div class="section surface animate-in delay-2">
-				<p class="section-label">How I work</p>
-				<h2>I like work that rewards precision.</h2>
-				<ul class="principles-list">
-					<li>
-						<strong>Adversarial by mindset, practical in output</strong>
-						I want findings and implementations that change decisions, not just look clever in isolation.
-					</li>
-					<li>
-						<strong>Fast understanding before fast action</strong>
-						The first job is building the right mental model. Speed matters after that.
-					</li>
-					<li>
-						<strong>Strong fundamentals scale better than hacks</strong>
-						Networking, systems, and software basics keep paying off across every project and role.
-					</li>
-				</ul>
+		<section class="band animate-in delay-2">
+			<div class="band-head">
+				<p class="eyebrow">Method</p>
+				<h2>How I like to work</h2>
 			</div>
-
-			<div class="section surface animate-in delay-3">
-				<p class="section-label">What I am building toward</p>
-				<h2>Deeper security engineering with range.</h2>
-				<p class="section-intro">
-					I am most engaged by work that combines offensive thinking, product awareness, and enough engineering depth to
-					understand what a fix really costs.
-				</p>
-				<ul class="stack-list">
-					<li>Product security and red-team style testing</li>
-					<li>Networking-heavy and systems-heavy problems</li>
-					<li>Tools that help teams move with more confidence</li>
-				</ul>
+			<div class="band-body">
+				<div class="method-grid" aria-label="Capabilities">
+					<article class="method-card">
+						<p class="mini-label">01</p>
+						<h3>Figure out the shape first</h3>
+						<p>Read the system, map the boundaries, and avoid guessing before touching anything.</p>
+					</article>
+					<article class="method-card">
+						<p class="mini-label">02</p>
+						<h3>Keep the output useful</h3>
+						<p>Findings, tooling, or code should make the next step easier for whoever touches it next.</p>
+					</article>
+					<article class="method-card">
+						<p class="mini-label">03</p>
+						<h3>Do not overbuild it</h3>
+						<p>Good fundamentals age better than clever presentation or extra layers nobody asked for.</p>
+					</article>
+				</div>
 			</div>
 		</section>
 
-		<section class="cta-panel surface animate-in delay-4">
-			<div>
-				<p class="section-label">Next</p>
-				<h2>Want the build side too?</h2>
-				<p>The projects page is the best complement to this one. It shows the kinds of problems I choose when I can pick them myself.</p>
+		<section class="band animate-in delay-3">
+			<div class="band-head">
+				<p class="eyebrow">Best fit</p>
+				<h2>The kind of work I like</h2>
+			</div>
+			<div class="band-body">
+				<div class="summary-grid">
+					<article class="summary-item">
+						<p class="mini-label">Security</p>
+						<h3>Security review</h3>
+						<p>Auth flows, trust boundaries, attack surface, and the weird behavior that only shows up once a system gets stressed.</p>
+					</article>
+					<article class="summary-item">
+						<p class="mini-label">Systems</p>
+						<h3>Backend and network flow</h3>
+						<p>Protocols, services, and lower-level logic where understanding the path matters more than the UI.</p>
+					</article>
+					<article class="summary-item">
+						<p class="mini-label">Tooling</p>
+						<h3>Small internal software</h3>
+						<p>Scripts, utilities, and small services that remove repetitive work or expose better signals.</p>
+					</article>
+				</div>
+			</div>
+		</section>
+
+		<section class="closing-strip animate-in delay-4">
+			<div class="closing-copy">
+				<p class="eyebrow">Next</p>
+				<h2>Projects has the code.</h2>
+				<p class="closing-note">That is where the build side lives.</p>
 			</div>
 			<div class="button-row">
 				<a class="button button-primary" href="/projects">Open projects</a>
-				<a class="button button-secondary" href="https://github.com/alarmant0" target="_blank" rel="noreferrer">GitHub profile</a>
+				<a class="button button-secondary" href="https://github.com/alarmant0" target="_blank" rel="noopener noreferrer">GitHub profile</a>
 			</div>
 		</section>
 	</main>
 
 	<footer class="site-shell site-footer">
-		<div class="footer-inner">
+		<div class="footer-bar">
+			<p>David Pinheiro</p>
 			<div class="footer-links">
 				<a href="/home#about">About</a>
 				<a href="/work">Work</a>
 				<a href="/projects">Projects</a>
 				<a href="/wtv">wtv</a>
-				<a href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noreferrer">Resume</a>
+				<a href="/DavidPinheiro-Resume.pdf" target="_blank" rel="noopener noreferrer">Resume</a>
 				<a href="mailto:davidpinheirombp57@gmail.com">Email</a>
 			</div>
-			<p>© 2026 David Pinheiro. Focused on security, systems, and useful work.</p>
 		</div>
 	</footer>
 </body>
